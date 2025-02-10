@@ -1,0 +1,29 @@
+{% render 'breadcrumb' %}
+<div class="page-header" style="background:{{ section.settings.background}}">
+    <div class="page-width">
+        <h1 class="page-title">
+            {{ page.title | downcase }}
+        </h1>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Page Header",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background"
+        }
+    ],
+    "blocks": [
+    ],
+    "presets": [
+        {
+          "name": "Page Header"
+        }
+    ]
+  }
+{% endschema %}

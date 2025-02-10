@@ -23,7 +23,7 @@
       assign ratio = media_aspect_ratio
     endif
   -%}
-  <div class="article-card-wrapper card-wrapper underline-links-hover">
+  <div class="article-card-wrapper card-wrapper">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
     <div
       class="
@@ -46,8 +46,7 @@
               class="article-card__image media media--hover-effect"
               {% if section.settings.media_height == 'adapt' %}
                 style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
-              {% endif %}
-            >
+              {% endif %}>
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                 srcset="
@@ -76,7 +75,7 @@
         <div class="card__content">
           <div class="card__information">
             <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-              <a href="{{ article.url }}" class="full-unstyled-link">
+              <a href="{{ article.url }}" class="link">
                 {{ article.title | truncate: 50 | escape }}
               </a>
             </h3>
@@ -99,23 +98,22 @@
                 </p>
               {%- endif -%}
               <div class="article-card__footer">
-                {%- if article.comments_count > 0 and blog.comments_enabled? -%}
-                  <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
-                {%- endif -%}
+                <a href="{{ article.url }}" class="link reverse">read more</a>
               </div>
             {%- endif -%}
           </div>
-          {%- if show_badge -%}
-            <div class="card__badge {{ settings.badge_position }}">
-              <span class="badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
-            </div>
-          {%- endif -%}
+          <div class="card__badge {{ settings.badge_position }}">
+            <span class="badge color-{{ settings.color_schemes | first }}">{{ blog.title }}</span>
+          </div>
         </div>
+        {%- if show_image == true and article.image -%}
+          <a href="{{ article.url }}" class="overlay-link"></a>
+        {%- endif -%}
       </div>
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-            <a href="{{ article.url }}" class="full-unstyled-link">
+            <a href="{{ article.url }}" class="link">
               {{ article.title | truncate: 50 | escape }}
             </a>
           </h3>
@@ -138,15 +136,13 @@
               </p>
             {%- endif -%}
             <div class="article-card__footer">
-              {%- if article.comments_count > 0 and blog.comments_enabled? -%}
-                <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
-              {%- endif -%}
+              <a href="{{ article.url }}" class="link reverse">read more</a>
             </div>
           {%- endif -%}
         </div>
         {%- if show_badge -%}
           <div class="card__badge {{ settings.badge_position }}">
-            <span class="badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
+            <span class="badge color-{{ settings.color_schemes | first }}">{{ blog.title }}</span>
           </div>
         {%- endif -%}
       </div>

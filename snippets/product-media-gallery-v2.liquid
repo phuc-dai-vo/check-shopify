@@ -1,0 +1,32 @@
+<div class="product-image-slider">
+    <div class="product-images">
+        {%- for media in product.media -%}
+            <div class="product-image">
+                {{ media.preview_image | image_url: width: 1000 | image_tag: loading: 'lazy',
+                    sizes: sizes, widths: '360, 480, 640, 768, 1024, 1500, 2000', id: thumbnail_id, alt: media.alt | escape }}
+            </div>
+        {%- endfor -%}
+    </div>
+    <a href="#product-popup" class="product-gallery-zoom" data-modaal-type="inline" data-modaal-animation="fade" class="modaal" style="">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.3573 21.8548C14.931 21.8548 17.2872 20.9038 19.1005 19.3332L26.1131 26.3912C26.2146 26.4934 26.3472 26.5435 26.4799 26.5435C26.6125 26.5435 26.7451 26.4934 26.8467 26.3912C27.0497 26.1868 27.0497 25.8573 26.8467 25.6529L19.8527 18.6137C21.6266 16.7407 22.7187 14.2108 22.7187 11.4264C22.7187 5.67612 18.0705 1 12.3593 1C6.64813 1 2 5.67821 2 11.4264C2 17.1745 6.64813 21.8528 12.3593 21.8528H12.3573V21.8548ZM12.3573 2.04702C17.4986 2.04702 21.6805 6.25595 21.6805 11.4305C21.6805 16.6052 17.4986 20.8141 12.3573 20.8141C7.21593 20.8141 3.03407 16.6031 3.03407 11.4285C3.03407 6.25386 7.21593 2.04493 12.3573 2.04493V2.04702Z" fill="black"/>
+            <path d="M7.75061 11.9498H11.8392V16.0649C11.8392 16.3527 12.0713 16.5863 12.3573 16.5863C12.6432 16.5863 12.8753 16.3527 12.8753 16.0649V11.9498H16.9639C17.2499 11.9498 17.482 11.7163 17.482 11.4284C17.482 11.1406 17.2499 10.907 16.9639 10.907H12.8753V6.79193C12.8753 6.50411 12.6432 6.27051 12.3573 6.27051C12.0713 6.27051 11.8392 6.50411 11.8392 6.79193V10.907H7.75061C7.46464 10.907 7.23254 11.1406 7.23254 11.4284C7.23254 11.7163 7.46464 11.9498 7.75061 11.9498Z" fill="black"/>
+        </svg>
+        <span class="u-visually-hidden">Zoom</span>
+    </a>
+</div>
+<div class="product-thumbnails">
+    {%- for media in product.media -%}
+        <div class="product-image">
+            {{ media.preview_image
+                | image_url: width: 150
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: sizes,
+                  widths: '80, 150, 250, 350, 480, 640, 800',
+                  alt: media.alt
+                | escape
+              }}
+        </div>
+    {%- endfor -%}
+</div>

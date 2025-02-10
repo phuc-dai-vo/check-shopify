@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {
+        "background": "#f7e8ef"
+      }
+    },
+    "6436f47b-e7f6-49cc-9eed-4357ba484c37": {
+      "type": "salon-locator",
+      "blocks": {
+        "e15608e0-34c8-4c40-89a2-46d6e1a7d537": {
+          "type": "location",
+          "settings": {
+            "title": "australia",
+            "location": "salon-locator-au"
+          }
+        },
+        "14b14115-971d-43da-a127-71164bbdee07": {
+          "type": "location",
+          "settings": {
+            "title": "united states",
+            "location": "salon-locator-us"
+          }
+        }
+      },
+      "block_order": [
+        "e15608e0-34c8-4c40-89a2-46d6e1a7d537",
+        "14b14115-971d-43da-a127-71164bbdee07"
+      ],
+      "settings": {
+        "description": "we distribute our brands through the very best salons and our products are found wherever good hairdressers are stocked… search for your salvation now.\n\n<small>we recommend getting in touch with the salon to make sure they’ve got what you need.</small>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6436f47b-e7f6-49cc-9eed-4357ba484c37"
+  ]
+}

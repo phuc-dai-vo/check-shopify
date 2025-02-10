@@ -14,15 +14,18 @@
   }
 {%- endstyle -%}
 
+
+{% render 'breadcrumb' %}
+<div class="page-header" style="background:#f7e8ef">
+    <div class="page-width">
+        <h1 class="page-title">
+            account
+        </h1>
+    </div>
+</div>
+
 <div class="customer account section-{{ section.id }}-padding">
   <div>
-    <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
-    <a href="{{ routes.account_logout_url }}">
-      <span class="svg-wrapper">
-        {{- 'icon-account.svg' | inline_asset_content -}}
-      </span>
-      {{ 'customer.log_out' | t }}
-    </a>
   </div>
 
   <div>
@@ -97,9 +100,9 @@
                 {%- if paginate.previous -%}
                   <li>
                     <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
-                      <span class="svg-wrapper">
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </span>
+                      <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                      </svg>
                     </a>
                   </li>
                 {%- endif -%}
@@ -125,9 +128,9 @@
                 {%- if paginate.next -%}
                   <li>
                     <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
-                      <span class="svg-wrapper">
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </span>
+                      <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                      </svg>
                     </a>
                   </li>
                 {%- endif -%}
@@ -145,6 +148,10 @@
 
       <a href="{{ routes.account_addresses_url }}">
         {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+      </a>
+      <br/>
+      <a href="{{ routes.account_logout_url }}">
+        {{ 'customer.log_out' | t }}
       </a>
     </div>
   </div>

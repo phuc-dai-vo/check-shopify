@@ -12,8 +12,10 @@
     "main": {
       "type": "main-register",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "background": "#f7e8ef",
+        "description": "<p><strong>already registered? </strong><a href=\"/account/register\" title=\"/account/register\"><strong>sign in </strong></a><strong>and see where life takes you.</strong></p>",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },

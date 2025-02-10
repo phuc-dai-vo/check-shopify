@@ -6,6 +6,13 @@ class DetailsDisclosure extends HTMLElement {
 
     this.mainDetailsToggle.addEventListener('focusout', this.onFocusOut.bind(this));
     this.mainDetailsToggle.addEventListener('toggle', this.onToggle.bind(this));
+    this.mainDetailsToggle.addEventListener('mouseenter', function() {
+      this.open = true;
+    });
+
+    this.mainDetailsToggle.addEventListener('mouseleave', function() {
+      this.open = false;
+    });
   }
 
   onFocusOut() {
@@ -16,7 +23,6 @@ class DetailsDisclosure extends HTMLElement {
 
   onToggle() {
     if (!this.animations) this.animations = this.content.getAnimations();
-
     if (this.mainDetailsToggle.hasAttribute('open')) {
       this.animations.forEach((animation) => animation.play());
     } else {
@@ -26,6 +32,7 @@ class DetailsDisclosure extends HTMLElement {
 
   close() {
     this.mainDetailsToggle.removeAttribute('open');
+    document.getElementsByTagName("BODY")[0].classList.remove('megamenu-open');
     this.mainDetailsToggle.querySelector('summary').setAttribute('aria-expanded', false);
   }
 }
@@ -41,6 +48,11 @@ class HeaderMenu extends DetailsDisclosure {
   onToggle() {
     if (!this.header) return;
     this.header.preventHide = this.mainDetailsToggle.open;
+    if(this.mainDetailsToggle.open){
+      document.getElementsByTagName("BODY")[0].classList.add('megamenu-open');
+    }else{
+      document.getElementsByTagName("BODY")[0].classList.remove('megamenu-open');
+    }
 
     if (document.documentElement.style.getPropertyValue('--header-bottom-position-desktop') !== '') return;
     document.documentElement.style.setProperty(

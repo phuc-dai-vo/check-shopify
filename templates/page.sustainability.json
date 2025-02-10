@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {
+        "background": ""
+      }
+    },
+    "101f0d82-00d9-41d4-8a65-a9f924604749": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16325069209797__101f0d82-00d9-41d4-8a65-a9f924604749-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>at evo, we want to bring about change for the better… which isn’t easy for a brand that creates things for a living. waste is unavoidable when you’re in the game of making and creating. so, instead of claiming to be a super dooper sustainable brand, we’re striving to be the most responsible version of ourselves that we can be. our commitment is to put people and the planet first with the decisions we make to minimise our impact, however we can. we believe sustainability is a journey of progress, not a path of perfection.</p>",
+            "small": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16325069209797__101f0d82-00d9-41d4-8a65-a9f924604749-text-1"
+      ],
+      "settings": {
+        "wide": false,
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 52,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 30
+      }
+    },
+    "cf55ffaf-bd32-42db-b12a-a40d3a058cbe": {
+      "type": "image-with-text-boxed",
+      "settings": {
+        "background": "#e0edfb",
+        "image": "shopify://shop_images/dtrt-feature-3.jpg",
+        "icon": "shopify://shop_images/your-order-confirmed.svg",
+        "title": "products",
+        "description": "<p>we work hard to deliver top-notch professional haircare, but we’ll never do so at the expense of others. here is how we create honest products that put performance, people and the planet first.</p>",
+        "url": "shopify://pages/product-sustainability",
+        "url_label": "read more"
+      }
+    },
+    "07ddd122-c4e3-4c90-9461-54b82fb4318d": {
+      "type": "image-with-text-boxed",
+      "settings": {
+        "background": "#f0d1df",
+        "image": "shopify://shop_images/dtrt-feature-2.jpg",
+        "icon": "shopify://shop_images/friends_ofthe_forest.svg",
+        "title": "packaging + printed materials",
+        "description": "<p>from the shape of our packaging to the materials we use, we’re committed to reducing our footprint and meeting the crème de la crème of environmental standards at the same time.</p>",
+        "url": "shopify://pages/packaging-material-sustainability",
+        "url_label": "read more"
+      }
+    },
+    "ac2055bd-d319-463a-a995-3e1623af5f59": {
+      "type": "image-with-text-boxed",
+      "settings": {
+        "background": "#f7f7f7",
+        "image": "shopify://shop_images/dtrt-feature-1.jpg",
+        "icon": "shopify://shop_images/help_100.png",
+        "title": "big picture",
+        "description": "<p>being the most responsible version of ourselves means supporting initiatives that go beyond products, packaging and printed materials. here’s how we’re giving back to causes that contribute to the greater good.</p>",
+        "url": "shopify://pages/social-responsibility-1",
+        "url_label": "read more"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "101f0d82-00d9-41d4-8a65-a9f924604749",
+    "cf55ffaf-bd32-42db-b12a-a40d3a058cbe",
+    "07ddd122-c4e3-4c90-9461-54b82fb4318d",
+    "ac2055bd-d319-463a-a995-3e1623af5f59"
+  ]
+}

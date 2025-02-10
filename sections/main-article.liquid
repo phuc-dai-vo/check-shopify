@@ -1,6 +1,13 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template">
+{% render 'article-header' %}
+
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+  
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -15,6 +22,7 @@
           >
             <div
               class="article-template__hero-{{ block.settings.image_height }} media"
+              itemprop="image"
               {% if block.settings.image_height == 'adapt' and article.image %}
                 style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
               {% endif %}
@@ -48,17 +56,18 @@
         >
           <h1
             class="article-template__title"
+            itemprop="headline"
           >
             {{ article.title | escape }}
           </h1>
           {%- if block.settings.blog_show_date -%}
-            <span class="circle-divider caption-with-letter-spacing">
+            <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
               {{- article.published_at | time_tag: format: 'date' -}}
             </span>
           {%- endif -%}
           {%- if block.settings.blog_show_author -%}
-            <span class="caption-with-letter-spacing">
-              <span>{{ article.author }}</span>
+            <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">{{ article.author }}</span>
             </span>
           {%- endif -%}
         </header>
@@ -66,32 +75,148 @@
       {%- when 'content' -%}
         <div
           class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-        >
-          {{ article.content }}
+          itemprop="articleBody"
+          {{ block.shopify_attributes }}>
+          <div class="article-published-date">published {{ article.published_at | date: '%d %b %Y' | downcase }}</div>
+          
+
+
+          <div class="article-content">
+            {% if article.content contains '[collection-slider' %}
+              {% assign articleSplit =  article.content | split:'[collection-slider:' %}
+                {% assign content = article.content | replace:'<div', '<p' | replace:'</div', '</p' %}
+                {% assign parts = content | split: "[" %}
+                {% assign final_content = "" %}
+                
+                {% for part in parts %}
+                  {% if part contains 'collection-slider:' %}
+                    {% assign parts_inside = part | split: ']' %}
+                    {% assign before_shortcode = parts_inside[0] | split: ':' %}
+                    {% assign collection_name = before_shortcode[1] | split: ',' | first | strip | handleize %}
+                    {% assign item_count = before_shortcode[1] | split: ',' | last | strip | times:1 %}
+
+                    {% assign collection_obj = collections[collection_name] %}
+                    {% assign min = 100 %}
+                    {% assign max = 10000 %}
+                    {% assign range = max | minus: min %}
+                    {% assign random_number = "now" | date: "%N" | modulo: range | plus: min %}
+
+                    {% capture shortcode_div %}
+                      <div class="product-slider-wrapper">
+                        <div class="product-slider" role="list" aria-label="{{ 'general.slider.name' | t }}">
+                          {%- for product in collection_obj.products limit: item_count -%}
+                            <div class="product-slider-item">
+                              {% render 'card-product',
+                                card_product: product,
+                                media_aspect_ratio: 100,
+                                show_secondary_image: false,
+                                show_vendor: false,
+                                show_rating: false,
+                                show_quick_add: true,
+                                section_id: random_number
+                              %}
+                            </div>
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    {% endcapture %}
+
+
+                    {% assign final_content = final_content | append: shortcode_div %}
+                    {% if parts_inside.size > 1 %}
+                      {% assign final_content = final_content | append: parts_inside[1] %}
+                    {% endif %}
+                  {% elsif part contains '/column]' %}
+                    {% assign parts_inside = part | split: ']' %}
+                    {% assign final_content = final_content | append:'</div></div>' | append: parts_inside[1] %}
+                  {% elsif part contains 'column]' %}
+                    {% assign parts_inside = part | split: ']' %}
+                    {% assign final_content = final_content | append:'<div class="content-column"><div>' | append: parts_inside[1] %}
+                  {% elsif part contains 'split]' %}
+                    {% assign parts_inside = part | split: ']' %}
+                    {% assign final_content = final_content | append:'</div><div>' | append: parts_inside[1] %}
+                  {% elsif part contains 'button]' %}
+                    {% assign parts_inside = part | split: ']' %}
+                    {% assign button_part = parts_inside[1] | replace:'class="','class="button button--secondary' | replace:'<a','<a class="button button--secondary"' %}
+                    {% assign final_content = final_content | append: button_part %}
+                  {% elsif part contains '/button]' %}
+                    {% assign parts_inside = part | split: ']' %}
+                    {% assign final_content = final_content | append: parts_inside[1] %}
+                  {% else %}
+                    {% assign final_content = final_content | append: part %}
+                  {% endif %}
+                {% endfor %}
+                
+                {{ final_content | raw }}
+
+            {% else %}
+              {{ article.content }}
+            {% endif %}
+          </div>
         </div>
 
       {%- when 'share' -%}
         <div
           class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-        >
-          {% assign share_url = request.origin | append: article.url %}
-          {% render 'share-button', block: block, share_link: share_url %}
+          {{ block.shopify_attributes }}>
+          <div class="article-tags">
+            tags: {{ article.tags | join:', ' }}
+          </div>
+          <div class="article-share">
+            {% assign share_url = request.origin | append: article.url %}
+            <div class="article-share-title">
+              share
+            </div>
+            <ul class="share-icons">
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}">
+                  {% render 'icon-facebook-v2' %}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/sharing/share-offsite?mini=true&url={{ share_url }}&title={{ article.title }}&summary={{ article.excerpt }}">
+                  {% render 'icon-linkedin' %}
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/intent/tweet?mini=true&url={{ share_url }}&title={{ article.title }}&summary={{ article.excerpt }}">
+                  {% render 'icon-twitter' %}
+                </a>
+              </li>
+              <li>
+                <a href="mailto:?subject={{ article.title }}&body={{ share_url }}">
+                  {% render 'icon-email' %}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
     {%- endcase -%}
   {%- endfor -%}
 
-  <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">
-        <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
-        </span>
-      </span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
-    </a>
-  </div>
+    <div class="article-navigation">
+      {% if blog.previous_article %}
+        <a href="{{ blog.previous_article }}" class="">
+          <span class="arrow-icon">
+            <svg viewBox="0 0 14 14" fill="none" id="pagination-prev-arrow">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99498 3.505L8.98492 4.49495L6.4799 6.99998L8.98492 9.505L7.99498 10.495L4.5 6.99998L7.99498 3.505Z" fill="currentColor"></path>
+              </svg>
+          </span>
+          <span class="action-link__label">Prev Article</span>
+        </a>
+      {% endif %}
+      {% if blog.next_article %}
+        <a href="{{ blog.next_article }}" class="">
+          <span class="action-link__label">Next Article</span>
+          <span class="arrow-icon">
+            <svg viewBox="0 0 14 14" fill="none" id="pagination-next-arrow">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.48995 10.495L4.5 9.50502L7.00502 6.99999L4.5 4.49497L5.48995 3.50502L8.98492 6.99999L5.48995 10.495Z" fill="currentColor"></path>
+              </svg>
+          </span>
+        </a>
+      {% endif %}
+    </div>
+
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
       <div
@@ -141,9 +266,7 @@
           {%- if form.errors -%}
             <div class="form__message" role="alert">
               <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
-                <span class="svg-wrapper">
-                  {{- 'icon-error.svg' | inline_asset_content -}}
-                </span>
+                {% render 'icon-error' %}
                 {{ 'templates.contact.form.error_heading' | t }}
               </h3>
             </div>
@@ -166,9 +289,7 @@
           {%- elsif form.posted_successfully? -%}
             <div class="form-status-list form__message" role="status">
               <h3 class="form-status" tabindex="-1" autofocus>
-                <span class="svg-wrapper">
-                  {{- 'icon-success.svg' | inline_asset_content -}}
-                </span>
+                {% render 'icon-success' %}
                 {{ post_message | t }}
               </h3>
             </div>
@@ -203,9 +324,7 @@
                 {%- if form.errors contains 'author' -%}
                   <small id="CommentForm-author-error">
                     <span class="form__message">
-                      <span class="svg-wrapper">
-                        {{- 'icon-error.svg' | inline_asset_content -}}
-                      </span>
+                      {%- render 'icon-error' -%}
                       {{- 'blogs.article.name' | t }}
                       {{ form.errors.messages.author }}.</span
                     >
@@ -237,9 +356,7 @@
                 {%- if form.errors contains 'email' -%}
                   <small id="CommentForm-email-error">
                     <span class="form__message">
-                      <span class="svg-wrapper">
-                        {{- 'icon-error.svg' | inline_asset_content -}}
-                      </span>
+                      {%- render 'icon-error' -%}
                       {{- 'blogs.article.email' | t }}
                       {{ form.errors.messages.email }}.</span
                     >
@@ -269,9 +386,7 @@
             {%- if form.errors contains 'body' -%}
               <small id="CommentForm-body-error">
                 <span class="form__message">
-                  <span class="svg-wrapper">
-                    {{- 'icon-error.svg' | inline_asset_content -}}
-                  </span>
+                  {%- render 'icon-error' -%}
                   {{- 'blogs.article.message' | t }}
                   {{ form.errors.messages.body }}.</span
                 >
@@ -289,7 +404,34 @@
 </article>
 
 <script type="application/ld+json">
-  {{ article | structured_data }}
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ request.origin | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": [
+        {{ article | image_url: width: 1920 | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    }
+  }
 </script>
 
 {% schema %}
@@ -366,7 +508,7 @@
           "type": "text",
           "id": "share_label",
           "label": "t:sections.main-article.blocks.share.settings.text.label",
-          "default": "t:sections.main-article.blocks.share.settings.text.default"
+          "default": "Share"
         },
         {
           "type": "paragraph",

@@ -1,0 +1,12 @@
+<label class="size-options-label">size</label>
+<div class="size-options">
+    {% for prod in group.products %}
+        {% if prod.metafields.custom.size %}
+            <div class="size-link {% if product.handle == prod.handle %}active{% endif %}" style="order:{{ prod.metafields.custom.size.value | split:' ' | first | times:1 }}">
+                <a href="{{ prod.url }}" class="link">
+                    {{- prod.metafields.custom.size.value | downcase -}}{{- prod.metafields.custom.size.unit | downcase -}}
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

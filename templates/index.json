@@ -9,76 +9,290 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "df6849db-89d4-4e7d-a3e5-257676d24df3": {
+      "type": "slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "template--16269654950085__df6849db-89d4-4e7d-a3e5-257676d24df3-slide-1": {
+          "type": "slide",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "image": "shopify://shop_images/evo_hold-banner-1920x800-2.5m.jpg",
+            "image_mobile": "shopify://shop_images/kru3525-mobile-640x360.webp",
+            "background_color": "rgba(0,0,0,0)",
+            "color_theme": "dark",
+            "heading": "the greatest hits",
+            "heading_size": "h1",
+            "subheading": "discover the products you'll keep spinning all year long",
+            "button_label": "shop bestsellers",
+            "link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
           }
         },
-        "button": {
-          "type": "buttons",
+        "template--16269654950085__df6849db-89d4-4e7d-a3e5-257676d24df3-slide-2": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify://shop_images/1920x800-desktop-style-group-1.webp",
+            "image_mobile": "shopify://shop_images/640x360-mobile-style-group-1.webp",
+            "background_color": "",
+            "color_theme": "dark",
+            "heading": "style saviours",
+            "heading_size": "h1",
+            "subheading": "styling and finishing options for any and every situation",
+            "button_label": "shop style",
+            "link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "template--16269654950085__df6849db-89d4-4e7d-a3e5-257676d24df3-slide-1",
+        "template--16269654950085__df6849db-89d4-4e7d-a3e5-257676d24df3-slide-2"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
-    "featured_collection": {
+    "fe0b4d09-3d44-44a6-a8e4-9fd5c04b595f": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://player.vimeo.com/video/907289721?muted=1&player_id=907289721&autoplay=1",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "07204670-6f7e-4c71-b9c0-99e3dde9b542": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "meet the chart-toppers",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "best-sellers",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "enable_desktop_slider": true,
+        "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "enable_quick_add": true,
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 30
+      }
+    },
+    "36cfb9ea-a316-4f37-8b3e-3b545172fa67": {
+      "type": "icon-with-text",
+      "blocks": {
+        "0a852714-0531-4d2b-ad51-9ca135d508b5": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/peta-accredited.webp",
+            "title": "tested on humans",
+            "description": "we don’t test on our furry friends and we have the cruelty-free peta accreditation to prove it"
+          }
+        },
+        "9ba7b9ea-1581-43a7-ae09-35be71df734f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/free-shipping.webp",
+            "title": "free shipping",
+            "description": "stock up on hair essentials and receive free shipping when you spend $50 or more"
+          }
+        },
+        "d844d9be-140f-480b-b0aa-8eeb5d308318": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/afterpay-available.webp",
+            "title": "afterpay available",
+            "description": "bask in hair glory sooner when you buy now, pay later with afterpay on orders over $65"
+          }
+        }
+      },
+      "block_order": [
+        "0a852714-0531-4d2b-ad51-9ca135d508b5",
+        "9ba7b9ea-1581-43a7-ae09-35be71df734f",
+        "d844d9be-140f-480b-b0aa-8eeb5d308318"
+      ],
+      "settings": {
+        "title": "saving ordinary humans from themselves™",
+        "image_size": 150,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "233c0129-f857-4d85-bca8-bd08ca1eb336": {
+      "type": "collection-list",
+      "blocks": {
+        "template--16269654950085__233c0129-f857-4d85-bca8-bd08ca1eb336-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "style"
+          }
+        },
+        "template--16269654950085__233c0129-f857-4d85-bca8-bd08ca1eb336-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "volume"
+          }
+        },
+        "template--16269654950085__233c0129-f857-4d85-bca8-bd08ca1eb336-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hydrate"
+          }
+        },
+        "f3ebed6c-35bc-40bb-b384-6a79bdb7e5f0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "repair"
+          }
+        }
+      },
+      "block_order": [
+        "template--16269654950085__233c0129-f857-4d85-bca8-bd08ca1eb336-featured_collection-1",
+        "template--16269654950085__233c0129-f857-4d85-bca8-bd08ca1eb336-featured_collection-2",
+        "template--16269654950085__233c0129-f857-4d85-bca8-bd08ca1eb336-featured_collection-3",
+        "f3ebed6c-35bc-40bb-b384-6a79bdb7e5f0"
+      ],
+      "settings": {
+        "title": "take your pick",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "ee84fedf-e564-474d-afbf-e2ce4456d7e7": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "c83fb9bc-6e79-4825-bb6d-a37311daab65": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"aside from smelling heavenly, the silkiness and shine that remain after rinsing – plus the effective and uniform toning results – make the fabuloso platinum blonde treatment a real colour-refreshing winner!”",
+            "title": "stylist",
+            "company": "beauty awards"
+          }
+        },
+        "d5d955ee-ed6b-4dae-9c23-bbf868fa1f35": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"we guarantee you'll end up on better terms with your curly hair after using liquid rollers. the hold is neither crispy nor sticky and the fresh floral scent deserves a special mention too, as it's like you've misted your hair in perfume.\"",
+            "title": "marie claire",
+            "company": "beauty awards"
+          }
+        },
+        "6cac4185-5ff7-4d0c-966a-4e78cedac80e": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"want hair twice the size that never implodes? buy macgyver, the best mousse we've tried in a decade.\"",
+            "title": "cosmopolitan",
+            "company": "beauty awards"
+          }
+        }
+      },
+      "block_order": [
+        "c83fb9bc-6e79-4825-bb6d-a37311daab65",
+        "d5d955ee-ed6b-4dae-9c23-bbf868fa1f35",
+        "6cac4185-5ff7-4d0c-966a-4e78cedac80e"
+      ],
+      "settings": {}
+    },
+    "1699140396f0ac4405": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "e782322a-f030-4e9e-b9cb-b1131295236f": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16269654950085__e782322a-f030-4e9e-b9cb-b1131295236f-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>evo acknowledges the traditional custodians of the land in which we work, the kaurna people. we pay respects to elders past and present and extend our respect to all aboriginal and torres strait islander peoples today.</p>",
+            "small": true
+          }
+        }
+      },
+      "block_order": [
+        "template--16269654950085__e782322a-f030-4e9e-b9cb-b1131295236f-text-1"
+      ],
+      "settings": {
+        "wide": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_tablet": 36,
+        "padding_bottom_tablet": 36,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "df6849db-89d4-4e7d-a3e5-257676d24df3",
+    "fe0b4d09-3d44-44a6-a8e4-9fd5c04b595f",
+    "07204670-6f7e-4c71-b9c0-99e3dde9b542",
+    "36cfb9ea-a316-4f37-8b3e-3b545172fa67",
+    "233c0129-f857-4d85-bca8-bd08ca1eb336",
+    "ee84fedf-e564-474d-afbf-e2ce4456d7e7",
+    "1699140396f0ac4405",
+    "e782322a-f030-4e9e-b9cb-b1131295236f"
   ]
 }

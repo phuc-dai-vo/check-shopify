@@ -1,0 +1,179 @@
+
+<div class="related-products-section">
+  <div class="page-width">
+    <div class="related-products-tab">
+        <div class="tab-item active">{{ section.settings.recent_title }}</div>
+        {% if product.metafields.custom.complementary_products %}
+          <div class="tab-item">{{ section.settings.range_title }}</div>
+        {% endif %}
+    </div>
+    <div class="related-products-content">
+        <div class="related-products tab-content active">
+            <div class="related-products-grid" id="recently-viewed-products">
+            </div>
+        </div>
+        {% if product.metafields.custom.complementary_products %}
+          <div class="related-products tab-content">
+              <div class="related-products-grid" id="products-range">
+                {% assign rangeProducts = product.metafields.custom.complementary_products.value %}
+                {% for prod in rangeProducts %}
+                  <div class="grid__item">
+                    {% render 'card-product',
+                      card_product: prod,
+                      show_secondary_image: false,
+                      lazy_load: false,
+                      show_quick_add: true,
+                      section_id: prod.id,
+                      horizontal_class: false,
+                      horizontal_quick_add: false
+                    %}
+                  </div>
+                  {% if forloop.index == 4%}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+          </div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+{% raw %}
+<script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+  <div class="grid__item">
+    <div class="card-wrapper product-card-wrapper underline-links-hover {{if available == false}}soldout-card{{/if}}">
+      <div class="card card--standard {{if featured_image}} card--media{{else}} card--text{{/if}}" style="--ratio-percent: 100%;">
+        <div class="card__inner ratio" style="--ratio-percent: 100%;"> 
+          {{if featured_image}} 
+            <div class="card__media">
+              <div class="media media--transparent media--hover-effect">
+                <img src="${Shopify.Products.resizeImage(featured_image, "600x")}" alt="${images[0].alt}" class="motion-reduce" loading="lazy">
+              </div>
+            </div>
+          {{/if}}
+          <div class="card__content">
+            <div class="card__information">
+              <h3 class="card__heading">
+                <a href="${url}" class="full-unstyled-link">
+                  ${title}
+                </a>
+              </h3>
+            </div>
+            <div class="card__badge top right"> 
+              {{if available == false}} 
+                <span class="product-sold-badge">
+                  Out of Stock
+                </span> 
+              {{/if}}
+            </div>
+          </div>
+        </div>
+
+        <div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading h5">
+              <a href="${url}" class="full-unstyled-link">
+                ${title}
+              </a>
+            </h3>
+
+            {{if metafields.size}}
+              <div class="product-size">${metafields.size}</div>
+            {{/if}}
+
+            <div class="card-information"> 
+              <div class="price {{if available}}{{ else }} price--sold-out {{/if}} {{if compare_at_price > price}} price--on-sale {{/if}}">
+                <div class="price__container">
+                  <div class="price__regular">
+                    <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                    <span class="price-item price-item--regular">
+                      ${Shopify.formatMoney(price)}
+                    </span>
+                  </div>
+                  <div class="price__sale"> 
+                    {{ if price_varies }}
+                      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                      <span>
+                        <s class="price-item price-item--regular">${Shopify.formatMoney(compare_at_price)}</s>
+                      </span> 
+                    {{ /if }}
+                    <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                    <span class="price-item price-item--sale price-item--last">
+                      ${Shopify.formatMoney(price)}
+                    </span>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div> 
+
+          <div class="quick-add">  
+            {{if variants.length == 1 || available == false}}
+                <product-form>
+                  <form method="post" action="/cart/add" id="quick-add-${id}" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form" data-product="${id}">
+                    <input type="hidden" name="id" value="${selected_or_first_available_variant.id}" disabled>
+                    {{if available}}
+                      <button id="quick-add-${id}-submit" type="submit" name="add" class="quick-add__submit button button--full-width button--primary" aria-haspopup="dialog" aria-labelledby="quick-add-${id}-submit" aria-live="polite" data-sold-out-message="true" {{if selected_or_first_available_variant.available == false }}disabled{{/if}}>
+                        <span>
+                          {{if selected_or_first_available_variant.available }}
+                            add to cart
+                          {{else}}
+                            out of stock
+                          {{/if}}
+                        </span>
+                        <span class="sold-out-message hidden">out of stock</span>
+                        <div class="loading__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                    {{else}}
+                      <button class="notify-me-button button button--full-width button--primary">
+                        notify when in stock
+                      </button>
+                    {{/if}}
+                  </form>
+                </product-form> 
+              {{else}}
+                <a href="${url}" class="button button--full-width button--primary">choose options</a>
+              {{/if}}
+            </div> 
+          <div class="card__badge top right"> 
+            {{if available == false}}
+              <span class="product-sold-badge">out of stock</span> 
+            {{else compare_at_price > price && available}} 
+              <span id="Badge-${id}" class="badge badge--bottom-left">
+                sale
+              </span> 
+            {{/if}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+{% endraw %}
+
+
+{% schema %}
+    {
+        "name": "Related Products",
+        "settings": [
+            {
+              "type": "text",
+              "id": "recent_title",
+              "default": "take another look",
+              "label": "Recently viewed title"
+            },
+            {
+                "type": "text",
+                "id": "range_title",
+                "default": "discover product range",
+                "label": "Product range title"
+            }
+        ]
+    }
+{% endschema %}

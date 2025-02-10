@@ -12,63 +12,87 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
         },
-        "price": {
-          "type": "price",
+        "e82919a3-5302-4806-9af2-8cdf2e001a59": {
+          "type": "size",
+          "settings": {}
+        },
+        "be820f8c-902e-428a-a902-f0c9ca719a62": {
+          "type": "inventory_threshold",
+          "settings": {
+            "title": "selling fast! limited stock",
+            "threshold": 24
+          }
+        },
+        "55996981-422b-4131-8666-0b2b3a3efac5": {
+          "type": "short_description",
           "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
+            "picker_type": "button"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
+        "ea96435f-9338-4da5-bfcb-40db27cfa521": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "share": {
-          "type": "share",
+        "12073cb1-d552-4257-9bd3-c0f1520ed650": {
+          "type": "key-benefits",
           "settings": {
-            "share_label": "Share"
+            "heading": "key benefit"
+          }
+        },
+        "5df1dcd6-a5f4-497b-b538-4aa92b572b9c": {
+          "type": "product-information",
+          "settings": {
+            "heading": "product information"
+          }
+        },
+        "729e9b3f-e775-472c-a310-d6202e798f73": {
+          "type": "how-to-use",
+          "settings": {
+            "heading": "how to use"
+          }
+        },
+        "b724f0c2-0ecf-46b5-b87c-6c4aaceab644": {
+          "type": "ingredients",
+          "settings": {
+            "heading": "ingredients"
+          }
+        },
+        "0eec9a6d-bfd4-4fad-90b4-fc8231125069": {
+          "type": "text",
+          "settings": {
+            "text": "disclaimer: the product information provided is accurate to the best of our knowledge. we rely on materials provided to us by our suppliers. for most accurate information please check the packaging of your product.",
+            "text_style": "body",
+            "small": true
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "price",
+        "e82919a3-5302-4806-9af2-8cdf2e001a59",
+        "be820f8c-902e-428a-a902-f0c9ca719a62",
+        "55996981-422b-4131-8666-0b2b3a3efac5",
         "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
-        "share"
+        "ea96435f-9338-4da5-bfcb-40db27cfa521",
+        "12073cb1-d552-4257-9bd3-c0f1520ed650",
+        "5df1dcd6-a5f4-497b-b538-4aa92b572b9c",
+        "729e9b3f-e775-472c-a310-d6202e798f73",
+        "b724f0c2-0ecf-46b5-b87c-6c4aaceab644",
+        "0eec9a6d-bfd4-4fad-90b4-fc8231125069"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -78,26 +102,15 @@
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "related-products": {
-      "type": "related-products",
+      "type": "related-products-v2",
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "recent_title": "take another look",
+        "range_title": "discover product range"
       }
     }
   },

@@ -1,0 +1,32 @@
+
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+<div class="related-articles">
+    <div class="page-width">
+        <h2>related articles</h2>
+        <div class="blog-articles ">
+            {%- for post in blog.articles, limit: 2 -%}
+                {% if post.handle != article.handle %}
+                    <div
+                    class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {% if settings.animations_reveal_on_scroll %}
+                        data-cascade
+                        style="--animation-order: {{ forloop.index }};"
+                    {% endif %}
+                    >
+                    {%- render 'article-card',
+                        article: post,
+                        media_height: 'large',
+                        media_aspect_ratio: article.image.aspect_ratio,
+                        show_image: true,
+                        show_date: false,
+                        show_author: false,
+                        show_excerpt: true,
+                        show_badge: true
+                    -%}
+                    </div>
+                {% endif %}
+            {%- endfor -%}
+        </div>
+    </div>
+</div>

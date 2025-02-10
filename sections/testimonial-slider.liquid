@@ -1,0 +1,59 @@
+<div class="testimonial-slider">
+    {% for block in section.blocks %}
+        <div class="testimonial-item">
+            <div class="testimonial-item-layout">
+                {% if block.settings.testimonial != blank %}
+                    <blockquote class="testimonial-text">
+                        {{ block.settings.testimonial }}
+                    </blockquote>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                    <div class="testimonial-name">
+                        {{ block.settings.title }}
+                    </div>
+                {% endif %}
+                {% if block.settings.company != blank %}
+                    <div class="testimonial-company">
+                        {{ block.settings.company }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% schema %}
+  {
+    "name": "Testimonial Slider",
+    "class": "testimonial-slider-section",
+    "settings": [
+    ],
+    "blocks": [
+        {
+            "type": "testimonial",
+            "name": "Testimonial",
+            "settings":[
+                {
+                    "type": "textarea",
+                    "id": "testimonial",
+                    "label": "Testimonial"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Name"
+                },
+                {
+                    "type": "text",
+                    "id": "company",
+                    "label": "Company"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+          "name": "Testimonial Slider"
+        }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,119 @@
+<div class="image-section section-{{ section.id }}-padding" style="background:{{ section.settings.background }}">
+    <div class="page-width {% if section.settings.wide %}wide{% endif %}">
+        {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | img_url:'1500x' }}" {% if section.settings.mobile_image != blank %}class="desktop-only"{% endif %}>
+        {% endif %}
+        {% if section.settings.mobile_image != blank %}
+            <img src="{{ section.settings.mobile_image | img_url:'1000x' }}" class="mobile-only">
+        {% endif %}
+    </div>
+</div>
+
+{%- style -%}
+  {% render 'padding-style' %}
+{%- endstyle -%}
+
+{% schema %}
+  {
+    "name": "Image",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "wide",
+            "label": "Wide Layout"
+        },
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Padding Desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 36
+        },
+        {
+          "type": "header",
+          "content": "Padding Tablet"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_tablet",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_tablet",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 36
+        },
+        {
+          "type": "header",
+          "content": "Padding Mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 36
+        }
+    ],
+    "presets": [
+        {
+          "name": "Image"
+        }
+    ]
+  }
+{% endschema %}
