@@ -1,0 +1,237 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {
+        "background": ""
+      }
+    },
+    "3cae3d03-11c8-4753-9fbf-e5d230535739": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://player.vimeo.com/video/780243147",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "844f97f8-5f3e-4ee8-83de-869fe22ea5d7": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16324299555013__844f97f8-5f3e-4ee8-83de-869fe22ea5d7-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>we're a family owned and operated, aussie born and raised brand that has been providing salons across the globe with top-notch professional haircare since '05. we're here to give anyone and everyone good hair... no miracle cures, gimmicks, hyped-up ingredients or answers to love, life and other woes. just high quality, professional haircare that speaks the truth with personality. </p>",
+            "small": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16324299555013__844f97f8-5f3e-4ee8-83de-869fe22ea5d7-text-1"
+      ],
+      "settings": {
+        "wide": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "ab0ea96b-c342-463c-b9a4-abf484d7b5da": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16324299555013__ab0ea96b-c342-463c-b9a4-abf484d7b5da-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>from humble beginnings to big ideas, our mission has remained the same:</h4><h4>saving ordinary humans from themselves™</h4><p>we challenge the status quo</p><ul><li>with honest beauty products that respect people and the planet</li><li>to make people think for themselves</li><li>and inspire change for the better </li></ul>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16324299555013__ab0ea96b-c342-463c-b9a4-abf484d7b5da-text-1"
+      ],
+      "settings": {
+        "background": "",
+        "image": "shopify://shop_images/evo_about-us_780x525_6e3106e6-28dc-4322-b3de-83cddf04f420.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "f27d2066-ef03-4e4d-9453-5981248aa1c8": {
+      "type": "image",
+      "settings": {
+        "wide": false,
+        "background": "#f7e8ef",
+        "image": "shopify://shop_images/1500x355-about-evo-campaign-history-desktop.webp",
+        "mobile_image": "shopify://shop_images/640x430-about-evo-campaign-history-mobile.png",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "3adabcd4-584c-469b-b02f-d4b54cf0bc82": {
+      "type": "icon-with-text",
+      "blocks": {
+        "57054a61-3f63-4f3b-84e0-975a52f28bd0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/help.webp",
+            "title": "we are built on truth",
+            "description": "we were born from a desire to produce honest products that do what they say, without selling you the answer to life, love and other woes."
+          }
+        },
+        "057a5f77-0fd7-4162-a55c-6b23bf06e0d4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/view-password-on.webp",
+            "title": "we see beauty differently",
+            "description": "we believe beauty is abundant, not in a bottle. feeling good is looking good."
+          }
+        },
+        "769604c2-de49-4348-8fbb-9132c9d2c195": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/strengthens_1.webp",
+            "title": "we seek justice",
+            "description": "by holding ourselves and the beauty industry to a higher standard. we want a little less of the truth-stretching blah blah and a little more honesty. for all."
+          }
+        }
+      },
+      "block_order": [
+        "57054a61-3f63-4f3b-84e0-975a52f28bd0",
+        "057a5f77-0fd7-4162-a55c-6b23bf06e0d4",
+        "769604c2-de49-4348-8fbb-9132c9d2c195"
+      ],
+      "settings": {
+        "title": "since the start, we have been on a journey of truth, beauty and justice...",
+        "image_size": 150,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_tablet": 36,
+        "padding_bottom_tablet": 36,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "0babefd6-6fa4-4f49-9de9-7ceddfac3dcc": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16324299555013__0babefd6-6fa4-4f49-9de9-7ceddfac3dcc-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "doing the right thing",
+            "heading_size": "h1"
+          }
+        },
+        "template--16324299555013__0babefd6-6fa4-4f49-9de9-7ceddfac3dcc-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>at evo, we want to bring about change for the better… which isn’t easy for a brand that creates things for a living. our commitment is to put people and the planet first to minimise our impact, however we can. we believe sustainability is a journey of progress, not a path to perfection. here’s where we’re at in that journey.</p>",
+            "text_style": "body"
+          }
+        },
+        "template--16324299555013__0babefd6-6fa4-4f49-9de9-7ceddfac3dcc-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "learn more",
+            "button_link": "shopify://pages/sustainability",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16324299555013__0babefd6-6fa4-4f49-9de9-7ceddfac3dcc-heading-1",
+        "template--16324299555013__0babefd6-6fa4-4f49-9de9-7ceddfac3dcc-text-1",
+        "template--16324299555013__0babefd6-6fa4-4f49-9de9-7ceddfac3dcc-button-1"
+      ],
+      "settings": {
+        "background": "#e7f2e0",
+        "image": "shopify://shop_images/evo_social_march_respectpeopleplanet-cropped-1.webp",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "ed01b8b9-3d4c-4677-8e1b-11cd95a9f8e0": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "top-notch professional haircare",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vegan",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "padding_top_tablet": 36,
+        "padding_bottom_tablet": 36,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "3cae3d03-11c8-4753-9fbf-e5d230535739",
+    "844f97f8-5f3e-4ee8-83de-869fe22ea5d7",
+    "ab0ea96b-c342-463c-b9a4-abf484d7b5da",
+    "f27d2066-ef03-4e4d-9453-5981248aa1c8",
+    "3adabcd4-584c-469b-b02f-d4b54cf0bc82",
+    "0babefd6-6fa4-4f49-9de9-7ceddfac3dcc",
+    "ed01b8b9-3d4c-4677-8e1b-11cd95a9f8e0"
+  ]
+}

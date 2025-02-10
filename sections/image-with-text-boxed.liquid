@@ -1,0 +1,75 @@
+<div class="page-width wide">
+    <div class="image-box" style="background:{{ section.settings.background }}">
+        {% if section.settings.image != blank %}
+            <div class="image-box-left">
+                <img src="{{ section.settings.image | img_url:'1000x' }}" class="image-box-image">
+            </div>
+        {% endif %}
+        <div class="image-box-right">
+            <div class="image-box-captions">
+                {% if section.settings.icon != blank %}
+                    <img src="{{ section.settings.icon | img_url:'300x' }}" class="image-box-icon">
+                {% endif %}
+                {% if section.settings.title != blank %}
+                    <h3 class="image-box-title">{{ section.settings.title }}</h3>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                    <div class="image-box-description">{{ section.settings.description }}</div>
+                {% endif %}
+                {% if section.settings.url != blank and section.settings.url_label != blank %}
+                    <a href="{{ section.settings.url }}" class="button button--secondary">{{ section.settings.url_label }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image with Text - Boxed",
+    "class": "image-boxed",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+        },
+        {
+            "type": "text",
+            "id": "url_label",
+            "label": "Link label"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Image with Text - Boxed"
+        }
+    ]
+  }
+{% endschema %}

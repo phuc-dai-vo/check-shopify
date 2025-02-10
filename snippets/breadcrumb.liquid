@@ -1,0 +1,109 @@
+{% unless template == 'index' or template == 'list-collections' or template == '404' %}
+
+    {% assign t = template | split: '.' | first %}
+    
+    <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/" title="Home" class="link link--text">Home</a>
+        </li>
+    
+      {% case t %}
+      {% when 'page' %}
+        
+        {% if page.metafields.custom.parent %}
+          {% assign parent_page = page.metafields.custom.parent.value %}
+          <li>
+              {% render 'breadcrumb-divider' %}
+              <a href="{{ parent_page.url }}" aria-current="page" class="link link--text">{{ parent_page.title }}</a>
+          </li>
+        {% endif %}
+        <li>
+            {% render 'breadcrumb-divider' %}
+            <a href="{{ page.url }}" aria-current="page" class="link link--text">{{ page.title }}</a>
+        </li>
+    
+      {% when 'product' %}
+    
+        {% if collection.url %}
+          <li>
+            {% render 'breadcrumb-divider' %}
+            {{ collection.title | link_to: collection.url, class:"link link--text" }}
+          </li>
+        {% endif %}
+    
+        <li>
+            {% render 'breadcrumb-divider' %}
+            <a href="{{ product.url }}" aria-current="page" class="link link--text">{{ product.title | split:'-' | first }}</a>
+        </li>
+    
+      {% when 'collection' and collection.handle %}
+    
+        {% if current_tags %}
+          <li>
+            {% render 'breadcrumb-divider' %}
+            {{ collection.title | link_to: collection.url, class:"link link--text"  }}
+          </li>
+          <li>
+            {% render 'breadcrumb-divider' %}
+            {% capture tag_url %}{{ collection.url }}/{{ current_tags | join: "+"}}{% endcapture %}
+            <a href="{{ tag_url }}" aria-current="page" class="link link--text">{{ current_tags | join: " + "}}</a>
+          </li>
+        {% else %}
+          <li>
+            {% render 'breadcrumb-divider' %}
+            <a href="{{ collection.url }}" aria-current="page" class="link link--text">{{ collection.title }}</a>
+          </li>
+        {% endif %}
+    
+      {% when 'blog' %}
+    
+        {% if current_tags %}
+          <li>
+            {% render 'breadcrumb-divider' %}
+            {{ blog.title | link_to: blog.url, class:"link link--text"  }}
+          </li>
+          <li>
+            {% render 'breadcrumb-divider' %}
+            {% capture tag_url %}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{% endcapture %}
+            <a href="{{ tag_url }}" aria-current="page" class="link link--text">{{ current_tags | join: " + " }}</a>
+          </li>
+        {% else %}
+          <li>
+            {% render 'breadcrumb-divider' %}
+            <a href="{{ blog.url }}" aria-current="page" class="link link--text">{{ blog.title }}</a>
+          </li>
+        {% endif %}
+    
+      {% when 'article' %}
+    
+        <li>
+            {% render 'breadcrumb-divider' %}
+            {{ blog.title | link_to: blog.url, class:"link link--text"  }}
+        </li>
+        <li>
+            {% render 'breadcrumb-divider' %}
+            <a href="{{ article.url }}" aria-current="page" class="link link--text">{{ article.title }}</a>
+        </li>
+      {% when 'search' %}
+        <li aria-current="page">
+          {% render 'breadcrumb-divider' %}
+          <a href="javascript:void(0)" class="link link--text">search</a>
+        </li>
+      {% when 'cart' %}
+        <li aria-current="page">
+          {% render 'breadcrumb-divider' %}
+          <a href="javascript:void(0)" class="link link--text">cart</a>
+        </li>
+      {% else %}
+    
+        <li aria-current="page">
+            {% render 'breadcrumb-divider' %}
+            <a href="{{ request.path }}" aria-current="page" class="link link--text">{{ page_title }}</a>
+        </li>
+    
+      {% endcase %}
+    
+      </ol>
+    </nav>
+    {% endunless %}

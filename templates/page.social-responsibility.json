@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {
+        "background": ""
+      }
+    },
+    "8db9f2c4-212e-493a-ab72-c21fb7300ed9": {
+      "type": "image",
+      "settings": {
+        "wide": true,
+        "background": "#ffffff",
+        "image": "shopify://shop_images/doing-the-right-thing_the-big-picture-1200-x-560px.webp",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "82dabd94-07da-4be9-b54d-15039b319314": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "big picture",
+            "heading_size": "h1"
+          }
+        },
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>being the most responsible version of ourselves means supporting initiatives that go beyond products, packaging and printed materials. here’s how we’re giving back to causes that contribute to the greater good.</p>",
+            "small": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-heading-1",
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-text-1"
+      ],
+      "settings": {
+        "wide": true,
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 70,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "058a3b73-21e5-42b0-a093-511baa46c806": {
+      "type": "icon-with-text",
+      "blocks": {
+        "c2a61775-ca39-41f6-94dc-ddcc932d0e2f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons7.png",
+            "title": "carbon footprint",
+            "description": "we offset operational carbon emissions by purchasing carbon credits and own an allotment of trees that allow us to offset the emissions associated with the production of our fabuloso and travel-sized tubes."
+          }
+        },
+        "4b02329b-1a5d-457b-9056-486c55c18d1b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons9.png",
+            "title": "greener salons ",
+            "description": "we partner with organisations like <a href=\"https://greencirclesalons.com/\" target=\"_blank\">green circle salons</a> to help create a more sustainable professional haircare industry."
+          }
+        },
+        "fdadc541-c3f6-4a57-9de0-245c9430e544": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pals-with-the-people.png",
+            "title": "pals with the people",
+            "description": "we proudly partner with <a href=\"https://www.shortbackandsidewalks.com/\" target=\"_blank\">short back & sidewalks</a> who provide haircuts to those experiencing homelessness, free of charge and judgement. we also donate perfectly imperfect stock to homeless shelters and support indigenous communities through ongoing partnerships."
+          }
+        },
+        "221b2a5e-ca29-4662-9f51-3eff303bd306": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/plastic-bank.png",
+            "title": "plastic bank",
+            "description": "by partnering with <a href=\"https://plasticbank.com/\" target=\"_blank\"> >plastic bank</a>, we are helping to stop plastic entering our oceans. for every evo retail product sold, plastic bank collection members will collect the same amount of plastic from the environment. they will then be able to exchange it at collection branches for secure income and life-improving benefits."
+          }
+        }
+      },
+      "block_order": [
+        "c2a61775-ca39-41f6-94dc-ddcc932d0e2f",
+        "4b02329b-1a5d-457b-9056-486c55c18d1b",
+        "fdadc541-c3f6-4a57-9de0-245c9430e544",
+        "221b2a5e-ca29-4662-9f51-3eff303bd306"
+      ],
+      "settings": {
+        "title": "",
+        "image_size": 74,
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "81cf4232-33a7-4e42-8be3-2d668beb4cd2": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "gimmick-free goodness awaits",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vegan",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8db9f2c4-212e-493a-ab72-c21fb7300ed9",
+    "82dabd94-07da-4be9-b54d-15039b319314",
+    "058a3b73-21e5-42b0-a093-511baa46c806",
+    "81cf4232-33a7-4e42-8be3-2d668beb4cd2"
+  ]
+}

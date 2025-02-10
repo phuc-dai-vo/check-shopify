@@ -11,52 +11,107 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "b299c078-4844-4ad7-8f2e-234192c355bb": {
+      "type": "information-bar",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
+        "80d17853-96ae-4fb1-a837-25765dce8da8": {
+          "type": "image",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "title": "free shipping on orders £25+"
+          }
+        },
+        "5cf5bdf9-0558-4785-86c8-29ae144b4999": {
+          "type": "image",
+          "settings": {
+            "title": "afterpay available on orders $65+"
+          }
+        },
+        "8c9fd5ca-77bb-421a-a69f-2728c7f30ab8": {
+          "type": "image",
+          "settings": {
+            "title": "peta accredited cruelty-free"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "80d17853-96ae-4fb1-a837-25765dce8da8",
+        "5cf5bdf9-0558-4785-86c8-29ae144b4999",
+        "8c9fd5ca-77bb-421a-a69f-2728c7f30ab8"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "default_country_selector": "uk",
+        "country_selector": "au::https://www.evohair.com/au\nus::https://www.evohair.com/us/"
       }
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "95fb99cf-b076-44e9-a1e1-7086f4cb26a6": {
+          "type": "menu_image",
+          "settings": {
+            "title": "hair care",
+            "text": "shop hydration",
+            "link": "shopify://collections/hydration"
+          }
+        },
+        "140c49af-5960-44ff-95ea-117d1b22a8d9": {
+          "type": "menu_image",
+          "settings": {
+            "title": "hair type",
+            "text": "discover products for damaged hair",
+            "link": "shopify://collections/damaged-hair-1"
+          }
+        },
+        "7f967cb7-fb45-435d-a584-f9237eda9e3f": {
+          "type": "menu_image",
+          "settings": {
+            "title": "skin care",
+            "text": "bollox-free, effective body care",
+            "link": "shopify://collections/beauty"
+          }
+        },
+        "menu_image_HVkRDF": {
+          "type": "menu_image",
+          "settings": {
+            "title": "range",
+            "text": "discover the hydrate family",
+            "link": "shopify://collections/hydrate-1"
+          }
+        }
+      },
+      "block_order": [
+        "95fb99cf-b076-44e9-a1e1-7086f4cb26a6",
+        "140c49af-5960-44ff-95ea-117d1b22a8d9",
+        "7f967cb7-fb45-435d-a584-f9237eda9e3f",
+        "menu_image_HVkRDF"
+      ],
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "logo_position": "top-left",
+        "menu": "megamenu",
+        "mobile-menu": "",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "none",
         "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "salon_locator_link": "",
+        "salon_locator_label": "salon locator",
+        "salon_locator_blank": false,
+        "help_link": "https://help.evohairstore.com/",
+        "help_label": "help",
+        "help_blank": true,
+        "help_dropdown": ""
       }
     }
   },
   "order": [
-    "announcement-bar",
+    "b299c078-4844-4ad7-8f2e-234192c355bb",
     "header"
   ]
 }

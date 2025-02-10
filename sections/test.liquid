@@ -1,0 +1,71 @@
+<div class="test-bar">
+    {% for block in section.blocks %}
+        <div class="information-column">
+            <img src="{{ block.settings.image | img_url }}">
+            <span>{{ block.settings.title }}</span>
+        </div>
+    {% endfor %}
+</div>
+{% if section.settings.country_selector != blank %}
+    <div class="country-selector">
+        {% assign countries = section.settings.country_selector | newline_to_br | split:'<br />' %}
+        <button type="button" class="country-list-trigger">
+            <span>{{ section.settings.default_country_selector }}</span>
+            {% render 'icon-arrow-v2' %}
+        </button>
+        <div class="country-list">
+            <div class="country-list-wrapper">
+                {% for country in countries %}
+                    {% assign countryData = country | split:'::' %}
+                    <a href="{{ countryData[1] }}">{{ countryData[0] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Test Bar",
+    "class": "top-bar",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Country Selector"
+        },
+        {
+            "type": "text",
+            "id": "default_country_selector",
+            "label": "Default value"
+        },
+        {
+            "type": "textarea",
+            "id": "country_selector",
+            "label": "Country List",
+            "info": "Separate each country with new line, separate country name and link with :: (doublecolon). Example: au:https://www.evohair.com/au/"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings":[
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+          "name": "Test Bar"
+        }
+    ]
+  }
+{% endschema %}

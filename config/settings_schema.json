@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Dawn",
-    "theme_version": "15.2.0",
+    "theme_version": "12.0.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
@@ -539,7 +539,7 @@
         "type": "color_scheme",
         "id": "card_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-2"
+        "default": "background-2"
       },
       {
         "type": "header",
@@ -674,7 +674,7 @@
         "type": "color_scheme",
         "id": "collection_card_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-2"
+        "default": "background-2"
       },
       {
         "type": "header",
@@ -809,7 +809,7 @@
         "type": "color_scheme",
         "id": "blog_card_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-2"
+        "default": "background-2"
       },
       {
         "type": "header",
@@ -1258,13 +1258,13 @@
         "type": "color_scheme",
         "id": "sale_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label",
-        "default": "scheme-5"
+        "default": "accent-2"
       },
       {
         "type": "color_scheme",
         "id": "sold_out_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",
-        "default": "scheme-3"
+        "default": "inverse"
       }
     ]
   },
@@ -1462,7 +1462,44 @@
         "type": "color_scheme",
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-1"
+        "default": "background-1"
+      }
+    ]
+  },
+  {
+    "name": "Site [Code Review]",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_types",
+        "options": [
+          {
+            "value": "drawer1",
+            "label": "evohair.hu"
+          },
+          {
+            "value": "drawer2",
+            "label": "evohairstore.it"
+          },
+          {
+            "value": "drawer3",
+            "label": "evohair.lt"
+          },
+          {
+            "value": "drawer4",
+            "label": "evohair.pl"
+          },
+          {
+            "value": "drawer5",
+            "label": "www.evohair.es"
+          },
+          {
+            "value": "drawer6",
+            "label": "evohairstore.com"
+          }
+        ],
+        "default": "drawer1",
+        "label": "Site"
       }
     ]
   }

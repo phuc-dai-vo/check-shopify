@@ -12,9 +12,10 @@
     "main": {
       "type": "main-login",
       "settings": {
-        "enable_shop_login_button": "true",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "background": "#f7e8ef",
+        "description": "<p><strong>don't have an account? good things come to those who</strong><a href=\"/account/register\" title=\"/account/register\"><strong> sign up</strong></a><strong>.</strong></p><p>we've been working to bring you a new and improved evohair.com, which means if you had a customer account with us prior to the 9th of august, you will need to activate your new account by <a href=\"/account/register\" title=\"/account/register\">signing up.</a></p>",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },

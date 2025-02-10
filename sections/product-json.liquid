@@ -1,0 +1,43 @@
+{%- capture metafieldData -%}
+    {
+    {%- assign customMetafield = product.metafields.custom -%}
+    {%- for key_val in product.metafields.custom -%}
+        {%- if key_val[1].type == 'rich_text_field' -%}
+            "{{- key_val[0] -}}": "{{- key_val[1] | metafield_tag | url_encode -}}"
+            {%- unless forloop.last -%},{%- endunless -%}
+        {%- elsif key_val[1].type == 'list.file_reference' -%}
+            
+        {%- else -%}
+            "{{- key_val[0] -}}": "{{- key_val[1].value -}}"
+            {%- unless forloop.last -%},{%- endunless -%}
+        {%- endif -%}
+    {%- endfor -%}
+    }
+{%- endcapture -%}
+{
+    "available": {{- product.available -}},
+    "id": {{- product.id -}},
+    "title": "{{- product.title | split:'-' | first -}}",
+    "vendor": "{{- product.vendor -}}",
+    "product_type": "{{- product.type -}}",
+    "created_at": "{{- product.created_at -}}",
+    "handle": "{{- product.handle }}",
+    "published_at": "{{- product.published_at -}}",
+    "price": "{{- product.price -}}",
+    "price_min": "{{- product.price_min -}}",
+    "price_max": "{{- product.price_max -}}",
+    "compare_at_price": "{{- product.compare_at_price -}}",
+    "compare_at_price_min": "{{- product.compare_at_price_min -}}",
+    "compare_at_price_max": "{{- product.compare_at_price_max -}}",
+    "compare_at_price_varies": "{{- product.compare_at_price_varies -}}",
+    "price_varies": {{- product.price_varies -}},
+    "tags": "{{- product.tags -}}",
+    "variants": {{- product.variants | json -}},
+    "selected_or_first_available_variant": {{- product.selected_or_first_available_variant | json -}},
+    "options": {{- product.options | json -}},
+    "images": {{- product.images | json -}},
+    "url": "{{- product.url -}}",
+    "media": {{- product.media | json -}},
+    "featured_image": {{- product.featured_image | json -}},
+    "metafields": {{- metafieldData -}}
+}

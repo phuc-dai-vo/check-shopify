@@ -1,0 +1,143 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {
+        "background": ""
+      }
+    },
+    "8db9f2c4-212e-493a-ab72-c21fb7300ed9": {
+      "type": "image",
+      "settings": {
+        "wide": true,
+        "background": "#ffffff",
+        "image": "shopify://shop_images/doing-the-right-thing_products-1200-x-560px.jpg",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "82dabd94-07da-4be9-b54d-15039b319314": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "packaging + printed materials",
+            "heading_size": "h1"
+          }
+        },
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>from the shape of our packaging to the materials we use, we’re committed to reducing our footprint and meeting the crème de la crème of environmental standards at the same time.</p>",
+            "small": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-heading-1",
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-text-1"
+      ],
+      "settings": {
+        "wide": true,
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 70,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "058a3b73-21e5-42b0-a093-511baa46c806": {
+      "type": "icon-with-text",
+      "blocks": {
+        "c2a61775-ca39-41f6-94dc-ddcc932d0e2f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons5.png",
+            "title": "packaging",
+            "description": "we currently use green pe and are transitioning to pcr (post consumer recycled) plastic so that we’re producing less virgin plastic. and, because our packaging is mostly square, we’re able to fit more bottles into shipping boxes which means less wastage."
+          }
+        },
+        "4b02329b-1a5d-457b-9056-486c55c18d1b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons6.png",
+            "title": "friends of the forest",
+            "description": "our brushes are made from forest stewardship council® certified hardwood (fsc-c120918), and we use fsc® certified paper for our printed materials."
+          }
+        }
+      },
+      "block_order": [
+        "c2a61775-ca39-41f6-94dc-ddcc932d0e2f",
+        "4b02329b-1a5d-457b-9056-486c55c18d1b"
+      ],
+      "settings": {
+        "title": "",
+        "image_size": 74,
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "81cf4232-33a7-4e42-8be3-2d668beb4cd2": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "shop our fsc® certified brushes",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vegan",
+        "products_to_show": 16,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8db9f2c4-212e-493a-ab72-c21fb7300ed9",
+    "82dabd94-07da-4be9-b54d-15039b319314",
+    "058a3b73-21e5-42b0-a093-511baa46c806",
+    "81cf4232-33a7-4e42-8be3-2d668beb4cd2"
+  ]
+}

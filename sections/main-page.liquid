@@ -14,12 +14,27 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
+{% render 'breadcrumb' %}
+<div class="page-header" style="background:{{ section.settings.background}}">
+    <div class="page-width">
+        <h1 class="page-title">
+            {{ page.title | downcase }}
+        </h1>
+    </div>
+</div>
+
+<div class="page-width section-{{ section.id }}-padding">
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+    {% assign pageParts = page.content | split:'[button]' %}
+    {% for part in pageParts %}
+      {% if part contains '[/button]' %}
+        {% assign button_parts = part | split: '[/button]' %}
+        {{ button_parts[0] | replace:'<a','<a class="button button--secondary"' }}
+        {{ button_parts[1] }}
+      {% else %}
+        {{ part }}
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 

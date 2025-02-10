@@ -1,0 +1,41 @@
+<div class="page-width">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="logo-list">
+        {% for block in section.blocks %}
+            <div class="logo-list-item">
+                <img src="{{ block.settings.image | img_url:'500x' }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Logo List",
+    "class": "logo-list-section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Text"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings":[
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+          "name": "Logo List"
+        }
+    ]
+  }
+{% endschema %}

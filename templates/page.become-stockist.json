@@ -1,0 +1,230 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {}
+    },
+    "844f97f8-5f3e-4ee8-83de-869fe22ea5d7": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16324299555013__844f97f8-5f3e-4ee8-83de-869fe22ea5d7-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>from in-salon colour to at-home colour maintenance and a complementary portfolio of care and styling products, our full concept offering makes it easy for free-thinking professionals to meet their clients’ needs while respecting people and the planet.</p>",
+            "small": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16324299555013__844f97f8-5f3e-4ee8-83de-869fe22ea5d7-text-1"
+      ],
+      "settings": {
+        "wide": false,
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 40
+      }
+    },
+    "f27d2066-ef03-4e4d-9453-5981248aa1c8": {
+      "type": "image",
+      "settings": {
+        "wide": false,
+        "background": "#fff",
+        "image": "shopify://shop_images/become-a-stockist_page-banner-5.jpg",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "ab0ea96b-c342-463c-b9a4-abf484d7b5da": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16324299555013__ab0ea96b-c342-463c-b9a4-abf484d7b5da-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>our community of evo salons and stylists:</h4><ul><li>are creative, free thinking people full of personality and flair</li><li>are professional and self motivated with integrity, individuality and innovation</li><li>are serious about their profession without taking themselves too seriously</li><li>are passionate about the salon industry, education and inspiring change for the better</li><li>share our vision to be part of an honest beauty industry that respects people and the planet</li></ul>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16324299555013__ab0ea96b-c342-463c-b9a4-abf484d7b5da-text-1"
+      ],
+      "settings": {
+        "background": "#f7e8ef",
+        "image": "shopify://shop_images/become-a-stockist-banner-v2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "0e63a388-2beb-466c-b48b-d3c8a3688bf6": {
+      "type": "logo-list",
+      "blocks": {
+        "aa6d962d-e752-4c56-8346-ae631f3c104c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-evo.png"
+          }
+        },
+        "066e4808-85c9-44af-abc5-460946477fb3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-evofabuloso.png"
+          }
+        },
+        "cd4fa757-1c6a-4607-9a6d-44bb5b5b6ad4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-top-drop.png"
+          }
+        },
+        "bafbeb98-b7e8-4407-9943-03e5eaf230b6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-evohueverse.png"
+          }
+        },
+        "549f543f-c312-4030-b478-1868b53097e5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-bottleblonde.png"
+          }
+        },
+        "1bf449d0-eab4-48eb-89fc-7eafdf821f40": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-evofabpro.png"
+          }
+        },
+        "e9afbba4-cb40-4ec2-8400-c8c0a8d19f55": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-evostaino.png"
+          }
+        }
+      },
+      "block_order": [
+        "aa6d962d-e752-4c56-8346-ae631f3c104c",
+        "066e4808-85c9-44af-abc5-460946477fb3",
+        "cd4fa757-1c6a-4607-9a6d-44bb5b5b6ad4",
+        "bafbeb98-b7e8-4407-9943-03e5eaf230b6",
+        "549f543f-c312-4030-b478-1868b53097e5",
+        "1bf449d0-eab4-48eb-89fc-7eafdf821f40",
+        "e9afbba4-cb40-4ec2-8400-c8c0a8d19f55"
+      ],
+      "settings": {
+        "title": "our ranges"
+      }
+    },
+    "8f9b917a-b0ff-491e-8554-9a1d0f912b74": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "c4f9267a-3835-4cdc-aace-b3c0e30daa22": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"hue-verse is a true hidden gem developed using the most innovative technology, allowing me limitless creativity and the best colour results on all hair types... all while making the right choices by the planet. it truly feels like the colour of the future - i could never go back!\"",
+            "title": "tom smith",
+            "company": "evo international colour creative director"
+          }
+        },
+        "6ce296a0-2568-4f6b-9632-682dbb8738d3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"could hue-verse be the best colour line ever created? i wouldn't be surprised. there is nothing you can't do with it. it's the most reliable colour i have ever worked with. a true colour artist's line that is easy to understand and will give beautiful results.\"",
+            "title": "pete koziell",
+            "company": "analog hair, melbourne"
+          }
+        },
+        "8046b9d9-9c83-4866-addd-38d68b1c7b3e": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"after getting to know the performance of the product, i can't imagine using anything else for our styling needs. evo has a very unique approach to beauty that fits with our core salon values.\"",
+            "title": "kristin page",
+            "company": "halls of ivy, los angeles"
+          }
+        },
+        "f397acbd-0e3e-4186-b1ee-268100174670": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "\"there is a lot of love about hue-verse... it has an amazing ingredients list, it's a local company, the branding is out-of-this-world... but what i really love is that it does exactly what i want it to do every time.\"",
+            "title": "adam hadley darrie",
+            "company": "archie & co, adelaide"
+          }
+        }
+      },
+      "block_order": [
+        "c4f9267a-3835-4cdc-aace-b3c0e30daa22",
+        "6ce296a0-2568-4f6b-9632-682dbb8738d3",
+        "8046b9d9-9c83-4866-addd-38d68b1c7b3e",
+        "f397acbd-0e3e-4186-b1ee-268100174670"
+      ],
+      "settings": {}
+    },
+    "ff3bf87d-24fa-49d6-99f6-20e7c57ade40": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16332663226565__ff3bf87d-24fa-49d6-99f6-20e7c57ade40-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>coming from a long line of hairdressing heritage, our mission is to grow and protect the hairdressing industry by providing salons across the globe with honest products that put performance, people and the planet first. so, what are you waiting for? join the evo pro family today.</p>",
+            "small": false
+          }
+        },
+        "template--16332663226565__ff3bf87d-24fa-49d6-99f6-20e7c57ade40-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "join now",
+            "button_link": "#",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16332663226565__ff3bf87d-24fa-49d6-99f6-20e7c57ade40-text-1",
+        "template--16332663226565__ff3bf87d-24fa-49d6-99f6-20e7c57ade40-button-1"
+      ],
+      "settings": {
+        "wide": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "844f97f8-5f3e-4ee8-83de-869fe22ea5d7",
+    "f27d2066-ef03-4e4d-9453-5981248aa1c8",
+    "ab0ea96b-c342-463c-b9a4-abf484d7b5da",
+    "0e63a388-2beb-466c-b48b-d3c8a3688bf6",
+    "8f9b917a-b0ff-491e-8554-9a1d0f912b74",
+    "ff3bf87d-24fa-49d6-99f6-20e7c57ade40"
+  ]
+}

@@ -1,0 +1,30 @@
+<div class="blog-top-bar page-width">
+    <div class="blog-categories">
+        {% for link in linklists.blogs.links %}
+            {% assign blog = link.object %}
+
+            <div class="blog-category {% if link.current %}active{% endif %}">
+                {% if link.current %}
+                    <span class="button-tab">{{ blog.title }}</span>
+                {% else %}
+                    <a href="{{ blog.url }}" class="button-tab">{{ blog.title }}</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="blog-search">
+        {% comment %}
+        <form action="/search" method="get" role="search" class="search search-modal__form">
+            <div class="field">
+            <input type="hidden" name="type" value="article" />
+              <input class="search__input field__input" id="Search-In-Modal" type="search" name="q" value="" placeholder="search blog">
+              <button class="search__button field__button" aria-label="Search">
+                <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                  <use href="#icon-search">
+                </use></svg>
+              </button>
+            </div>
+        </form>
+        {% endcomment %}
+    </div>
+</div>

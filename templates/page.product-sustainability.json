@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-header",
+      "settings": {
+        "background": ""
+      }
+    },
+    "8db9f2c4-212e-493a-ab72-c21fb7300ed9": {
+      "type": "image",
+      "settings": {
+        "wide": true,
+        "background": "#ffffff",
+        "image": "shopify://shop_images/doing-the-right-thing_packaging-1200-x-560px.jpg",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "82dabd94-07da-4be9-b54d-15039b319314": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "products",
+            "heading_size": "h1"
+          }
+        },
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>we work hard to deliver top-notch professional haircare, but we’ll never do so at the expense of others. here is how we create honest products that put performance, people and the planet first.</p>",
+            "small": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-heading-1",
+        "template--16325349277893__82dabd94-07da-4be9-b54d-15039b319314-text-1"
+      ],
+      "settings": {
+        "wide": true,
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 70,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "058a3b73-21e5-42b0-a093-511baa46c806": {
+      "type": "icon-with-text",
+      "blocks": {
+        "c2a61775-ca39-41f6-94dc-ddcc932d0e2f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons.webp",
+            "title": "free from",
+            "description": "<p>our ranges are free from sulfates, parabens, dea, tea, propylene glycol and gluten. not because it sounds good but because it’s what you, the people, want.</p>"
+          }
+        },
+        "4b02329b-1a5d-457b-9056-486c55c18d1b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons3.webp",
+            "title": "tested on humans",
+            "description": "<p>we don’t test on our furry friends (humans only) and we have the cruelty-free peta accreditation to prove it.</p>"
+          }
+        },
+        "fdadc541-c3f6-4a57-9de0-245c9430e544": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons2.webp",
+            "title": "gimmick-free",
+            "description": "<p>we don’t add hyped-up ingredients just for label claims, over inflate the truth or demonise ingredients. we keep things easy to understand and simple to use.</p>"
+          }
+        },
+        "221b2a5e-ca29-4662-9f51-3eff303bd306": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/brand-book_icons4.webp",
+            "title": "vegan",
+            "description": "we are predominantly vegan, with the exception of three* products.\n\n<small>*box o’ bollox, cassius + crop strutters, which contain beeswax and/ or lanolin.</small>"
+          }
+        }
+      },
+      "block_order": [
+        "c2a61775-ca39-41f6-94dc-ddcc932d0e2f",
+        "4b02329b-1a5d-457b-9056-486c55c18d1b",
+        "fdadc541-c3f6-4a57-9de0-245c9430e544",
+        "221b2a5e-ca29-4662-9f51-3eff303bd306"
+      ],
+      "settings": {
+        "title": "",
+        "image_size": 74,
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "81cf4232-33a7-4e42-8be3-2d668beb4cd2": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "gimmick-free goodness awaits",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vegan",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_tablet": 60,
+        "padding_bottom_tablet": 60,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8db9f2c4-212e-493a-ab72-c21fb7300ed9",
+    "82dabd94-07da-4be9-b54d-15039b319314",
+    "058a3b73-21e5-42b0-a093-511baa46c806",
+    "81cf4232-33a7-4e42-8be3-2d668beb4cd2"
+  ]
+}

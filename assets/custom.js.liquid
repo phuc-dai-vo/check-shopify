@@ -1,0 +1,293 @@
+$(document).ready(function(){
+    if($('.slideshow').length){
+        $('.slideshow').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            imagesLoaded: true,
+            setGallerySize: false,
+            arrowShape: 'M63 0L77.2645 14.2645L41.529 50L77.2645 85.7355L63 100L13 50L63 0Z'
+        });
+    }
+    if($('.product-slider').length){
+        function setSliderHeightToMax(slider) {
+            slider.cells.forEach(function(cell){
+                cell.element.style.height = '';
+            });
+            let heights = slider.cells.map(cell => cell.element.offsetHeight),
+                max = Math.max.apply(Math, heights);
+                slider.cells.forEach(function(cell){
+                cell.element.style.height = max + 'px';
+                cell.element.classList.add('height-set');
+            });
+        }
+        const productSlider = new Flickity( $('.product-slider')[0], {
+            // options
+            cellAlign: 'left',
+            groupCells: true,
+            contain: true,
+            wrapAround: false,
+            arrowShape: 'M63 0L77.2645 14.2645L41.529 50L77.2645 85.7355L63 100L13 50L63 0Z',
+            on: {
+                ready: function() {
+                    setSliderHeightToMax(this);
+                }
+            }
+        });
+        window.addEventListener('resize', function(){
+            if(typeof productSlider !== "undefined"){
+                setSliderHeightToMax(productSlider);
+            }
+        });
+    }
+    if($('.testimonial-slider').length){
+        $('.testimonial-slider').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            arrowShape: 'M63 0L77.2645 14.2645L41.529 50L77.2645 85.7355L63 100L13 50L63 0Z'
+        });
+    }
+    if($('.information-bar').length){
+        $('.information-bar').flickity({
+            watchCSS: true,
+            cellAlign: 'left',
+            autoPlay: true,
+            prevNextButtons: false,
+            pageDots: false,
+            contain: true,
+            adaptiveHeight: true,
+            wrapAround: true
+        });
+            
+    }
+    function waitForElementToExist(el,callback) {
+        var targetEl = $(el);
+        if (targetEl.length) {
+            callback(targetEl);
+        } else {
+          setTimeout(waitForElementToExist, 300); 
+        }
+      }
+      
+      if($('.template-index').length){
+        waitForElementToExist('#insta-feed',function(el){
+          (el).after($(`<div class="insta-follow">
+                            <a href="{{ settings.social_instagram_link }}" target="_blank" class="button button--secondary">follow us</a>
+                        </div>`))
+        });
+      }
+
+    $(document).on('click','.notify-me-button',function(){
+        $(this).prop('disabled', true);
+        const productID = $(this).parent().attr('data-product');
+        const variantID = $(this).siblings('[name="id"]').val();
+        const bisPopup = `<div class="bis-popup">
+                            <div class="popup-overlay"></div>
+                            <div class="popup-content">
+                                <button type="button" class="popup-close"></button>
+                                <svg viewBox="0 0 72 72" fill="none" id="notify-me-pop-up-icon">
+                                    <path d="M14.2255 51.4866H28.8861L35.3506 59.5563C35.5071 59.7528 35.7436 59.866 35.9967 59.8694H36C36.2498 59.8694 36.4862 59.7561 36.6461 59.563L43.2504 51.4866H57.7745C60.6554 51.4866 63 49.142 63 46.2611V17.3561C63 14.4753 60.6554 12.1306 57.7745 12.1306H14.2255C11.3446 12.1306 9 14.4753 9 17.3561V46.2611C9 49.142 11.3446 51.4866 14.2255 51.4866ZM10.6652 17.3561C10.6652 15.3945 12.2605 13.7958 14.2255 13.7958H57.7745C59.7362 13.7958 61.3348 15.3911 61.3348 17.3561V46.2611C61.3348 48.2228 59.7395 49.8214 57.7745 49.8214H42.8541C42.6043 49.8214 42.3678 49.9346 42.208 50.1278L36.0033 57.7112L29.9319 50.1344C29.7754 49.9379 29.5356 49.8214 29.2825 49.8214H14.2222C12.2605 49.8214 10.6619 48.2261 10.6619 46.2611V17.3561H10.6652Z" fill="currentColor"></path>
+                                    <path d="M27.4274 42.3678H31.767C32.1533 44.3028 33.8652 45.7615 35.9101 45.7615C37.955 45.7615 39.6668 44.2995 40.0532 42.3678H44.3927C45.0422 42.3678 45.645 42.0448 46.0047 41.5019C46.3644 40.959 46.4277 40.2763 46.1712 39.6801C46.1612 39.6568 46.1512 39.6368 46.1412 39.6169L44.2296 36C44.2196 35.9733 44.2162 35.9434 44.2162 35.9167V30.0285C44.2162 26.5981 42.128 23.6473 39.1539 22.3784C39.1439 20.5933 37.6885 19.1479 35.9034 19.1479C34.1183 19.1479 32.6629 20.5966 32.6529 22.3818C29.6788 23.6507 27.5906 26.6014 27.5906 30.0318V36C27.5906 36.03 27.5873 36.0566 27.5773 36.0832L25.6789 39.6069C25.6689 39.6269 25.6556 39.6502 25.6489 39.6701C25.3892 40.2696 25.4491 40.9524 25.8088 41.4986C26.1685 42.0448 26.7713 42.3711 27.4241 42.3711L27.4274 42.3678ZM35.9134 44.0963C34.791 44.0963 33.8385 43.3703 33.4922 42.3678H38.3346C37.9883 43.3736 37.0358 44.0963 35.9134 44.0963ZM35.9067 20.8065C36.5895 20.8065 37.1657 21.2394 37.3888 21.8456C36.9059 21.759 36.413 21.709 35.9067 21.709C35.4005 21.709 34.9043 21.7556 34.4214 21.8456C34.6445 21.2394 35.224 20.8065 35.9067 20.8065ZM27.171 40.3496L29.0693 36.8226C29.0826 36.8026 29.0926 36.7793 29.1026 36.756C29.2059 36.5129 29.2592 36.2564 29.2592 35.99V30.0218C29.2592 26.355 32.2432 23.3742 35.9067 23.3742C39.5702 23.3742 42.5543 26.3583 42.5543 30.0218V35.9101C42.5543 36.1698 42.6043 36.423 42.7075 36.6627C42.7175 36.6861 42.7275 36.706 42.7375 36.7294L44.6525 40.3496C44.6858 40.4561 44.6492 40.5394 44.6192 40.5794C44.5892 40.6227 44.5193 40.6993 44.3961 40.6993H27.4274C27.3009 40.6993 27.2342 40.6227 27.2043 40.5794C27.1776 40.5361 27.1377 40.4528 27.1743 40.3496H27.171Z" fill="currentColor"></path>
+                                    <path d="M48.8855 36.8792C48.5691 37.2123 48.5825 37.7385 48.9155 38.0549C49.0754 38.2081 49.2819 38.2847 49.4883 38.2847C49.7082 38.2847 49.928 38.1981 50.0912 38.0249C52.6356 35.3439 52.5257 31.0942 49.8447 28.5498C49.5117 28.2334 48.9854 28.2467 48.6657 28.5797C48.3493 28.9128 48.3626 29.439 48.6957 29.7587C50.7106 31.6704 50.7939 34.8643 48.8822 36.8792H48.8855Z" fill="currentColor"></path>
+                                    <path d="M51.7897 38.9175C51.4733 39.2505 51.4866 39.7767 51.8197 40.0931C51.9795 40.2463 52.186 40.3229 52.3925 40.3229C52.6123 40.3229 52.8321 40.2363 52.9953 40.0631C56.6355 36.2298 56.4756 30.1484 52.6423 26.5082C52.3092 26.1918 51.783 26.2051 51.4666 26.5382C51.1502 26.8712 51.1636 27.3974 51.4966 27.7138C54.6639 30.7212 54.7971 35.7469 51.7897 38.9141V38.9175Z" fill="currentColor"></path>
+                                    <path d="M21.6258 38.0249C21.7889 38.1981 22.0088 38.2847 22.2286 38.2847C22.4351 38.2847 22.6415 38.2081 22.8014 38.0549C23.1345 37.7385 23.1478 37.2123 22.8314 36.8792C20.9197 34.8643 21.003 31.6704 23.0179 29.7587C23.3509 29.4423 23.3643 28.9161 23.0479 28.5831C22.7315 28.25 22.2053 28.2367 21.8722 28.5531C19.1912 31.0976 19.0813 35.3472 21.6258 38.0282V38.0249Z" fill="currentColor"></path>
+                                    <path d="M19.3244 40.3229C19.5309 40.3229 19.7374 40.2463 19.8973 40.0931C20.2303 39.7767 20.2436 39.2505 19.9272 38.9175C16.9198 35.7502 17.0497 30.7245 20.217 27.7171C20.55 27.4008 20.5633 26.8745 20.2469 26.5415C19.9306 26.2084 19.4043 26.1951 19.0713 26.5115C15.2379 30.1517 15.0781 36.2331 18.7183 40.0665C18.8815 40.2397 19.1013 40.3262 19.3211 40.3262L19.3244 40.3229Z" fill="currentColor"></path>
+                                </svg>
+                                    <form class="klaviyo-bis-form" action="#" method="post">
+                                        <label for="bis-email" class="">email</label>
+                                        <input value="${productID}" name="product_id" type="hidden">
+                                        <input value="${variantID}" name="variant_id" type="hidden">
+                                        <div class="field-group">
+                                            <input class="input-field" id="bis-email" name="email" type="email" required="">
+                                            <button type="submit" class="button button--primary">
+                                                <span>notify me</span>
+                                            </button>
+                                        </div>
+                                    </form>
+                            </div>
+                         </div>`;
+        $('body').append(bisPopup);
+        setTimeout(function(){
+            $('body').find('.bis-popup').addClass('appear');
+        }, 100)
+    });
+
+    $(document).on('click','.bis-popup .popup-close,.bis-popup .popup-overlay,.bis-popup .continue-shopping',function(){
+        $('body').find('.bis-popup').removeClass('appear');
+        $('.notify-me-button').prop('disabled', false);
+        setTimeout(function(){
+            $('body').find('.bis-popup').remove();
+        },500);
+    });
+
+    $(document).on('submit','.klaviyo-bis-form',function(e){
+        e.preventDefault();
+        const email = $(this).find('[name="email"]').val();
+        const variantID = $(this).find('[name="variant_id"]').val();
+        const productID = $(this).find('[name="product_id"]').val();
+        const form = $(this);
+        form.find('button').prop('disabled', true);
+        $.ajax({
+            type: "POST",
+            url: "https://a.klaviyo.com/onsite/components/back-in-stock/subscribe",
+            data: {
+                 a: "ULP9Ag",
+                 email: email,
+                 variant: variantID,
+                 product: productID,
+                 platform: "shopify"
+            },
+            success: function(response){
+                console.log(response);
+                if(response.statusText == "error"){
+                    form.append(`<div class="error-message">${response.responseJSON.message}</div>`);
+                }else{
+                    form.hide();
+                    form.parent().append(`<div class="success-message">
+                                            <p>We will email you when this product is back in stock.</p>
+                                            <button class="continue-shopping button button--primary" type="button">continue shopping</button>
+                                          </div>`);
+                }
+                form.find('button').prop('disabled', true);
+            },
+            error: function (response, ajaxOptions, thrownError) {
+                form.append(`<div class="error-message">${response.responseJSON.message}</div>`);
+                form.find('button').prop('disabled', true);
+            }
+        });
+    });
+
+    if($('.product-images').length){
+        var productCarousel = $('.product-images').flickity({
+            // options
+            cellAlign: 'left',
+            prevNextButtons: true,
+            pageDots: false,
+            wrapAround: true,
+            imagesLoaded: true
+        });
+        var thumbCarousel = $('.product-thumbnails').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            groupCells: true,
+            prevNextButtons: false,
+            pageDots: false,
+            asNavFor: '.product-images',
+            draggable: true,
+            wrapAround: false,
+            imagesLoaded: true
+        });
+        $('.product-gallery-zoom').modaal({
+            after_open: reinitCarousel
+        });
+        
+        function reinitCarousel() {
+            productCarousel.flickity('resize');
+        }
+    }
+
+    if($('#recently-viewed-products').length){
+        Shopify.Products.showRecentlyViewed();
+    }
+
+    if($('body').hasClass('template-product')){
+        Shopify.Products.recordRecentlyViewed();
+    }
+
+    $(document).on('click','.tab-item',function(){
+        const elIndex = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $(this).parents('.shopify-section').find(`.tab-content:eq(${elIndex})`).addClass('active').siblings().removeClass('active');
+    })
+
+
+    $(document).on('click','.scroll-to-top__button',function(){
+        $('html, body').animate({ scrollTop: 0 }, 300);
+    });
+    $(document).on('click','.location-item h3',function(){
+        const locationContent = $(this).siblings('.location-content');
+        const locationItem = $(this).parent();
+        locationItem.toggleClass('expanded');
+        if(locationItem.hasClass('expanded')){
+            let totalHeight = 0;
+            locationContent.children().each(function(){
+                totalHeight += $(this).outerHeight();
+            });
+            locationContent.outerHeight(totalHeight);
+        }else{
+            locationContent.outerHeight(0);
+        }
+    });
+
+    $(document).on('submit','#location-form',function(e){
+        e.preventDefault();
+        var keyword = $(this).find('input[name="location-keyword"]').val().toLowerCase(); 
+        var region = $(this).find('select[name="location-region"]').val();
+        var found = false;
+        
+        $('.location-item').removeClass('active');
+        $('.location-item').each(function() {
+            var itemText = $(this).text().toLowerCase(); 
+            var itemRegion = $(this).data('region');
+            
+            var matchKeyword = keyword === "" || itemText.includes(keyword);
+            var matchRegion = region === "all" || itemRegion === region;
+
+            // Check if the item's text includes the keyword and if the item's region matches the selected region, or "All" is selected
+            if (matchKeyword && matchRegion) {
+                $(this).addClass('active').removeClass('hidden'); // Add the active class and show the matching item
+                found = true; // Set the found flag to true as we have a match
+            }
+        });
+        if (found) {
+            $('#location-list .not-found').addClass('hidden');
+        } else {
+            $('#location-list .not-found').removeClass('hidden');
+        }
+    })
+
+    $(document).on('click','.footer-block--menu .footer-block__heading',function(){
+        if($(window).width() < 1025){
+            $(this).parent().toggleClass('expanded');
+        }
+    })
+
+    $(document).on('click', '.country-list-trigger', function(){
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')){
+            const countryListHeight = $('.country-list-wrapper').outerHeight();
+            $('.country-list').outerHeight(countryListHeight);
+        }else{
+            $('.country-list').outerHeight(0);
+        }
+    });
+
+    $(document).on('click', '.header__icon.has-dropdown', function(e){
+        e.preventDefault();
+        $(this).parent().toggleClass('opened');
+        if($(this).parent().hasClass('opened')){
+            const dropdownHeight = $(this).next().find('.help-dropdown-wrapper').outerHeight();
+            $(this).next().outerHeight(dropdownHeight);
+        }else{
+            $(this).next().outerHeight(0);
+        }
+    });
+
+    //on click outside .header__icon.has-dropdown, close dropdown
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('.header__icon.has-dropdown').length){
+            $('.header__icon.has-dropdown').parent().removeClass('opened');
+            $('.header__icon.has-dropdown').next().outerHeight(0);
+        }
+    });
+    $(document).on('click', '.reset__button', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).siblings('.search__input').val('').focus();
+    });
+
+});
